@@ -17,4 +17,10 @@ def quiz_creator():
             choice_c = input("Enter choice c: ")
             choice_d = input("Enter choice d: ")
             #ask for the correct answer
+            while True:
+                correct_answer = input("Enter the correct answer (a, b, c, or d): ").lower()
+                if correct_answer in ['a', 'b', 'c', 'd']:
+                    break
+                else:
+                    print("Invalid input. Enter a, b, c, or d only.")
             #save all the data to the txt file
