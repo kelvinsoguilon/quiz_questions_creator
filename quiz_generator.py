@@ -1,3 +1,4 @@
+import os
 #define quiz creator program
 def quiz_creator():
     #create a file path or directory for the txt file
@@ -43,6 +44,9 @@ def quiz_creator():
             file.write("Answer key:" + "\n")
             for answer in answer_key:
                 file.write(answer + "\n")
+
+        print("Opening the quiz file.")
+        os.startfile(file_path)
 
 if __name__ == "__main__":
     quiz_creator()
