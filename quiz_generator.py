@@ -12,5 +12,9 @@ def quiz_creator():
                 print("Exiting the program.")
                 break
             #ask for the choices
+            choice_a = input("Enter choice a: ")
+            choice_b = input("Enter choice b: ")
+            choice_c = input("Enter choice c: ")
+            choice_d = input("Enter choice d: ")
             #ask for the correct answer
             #save all the data to the txt file
