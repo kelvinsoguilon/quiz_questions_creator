@@ -1,9 +1,10 @@
 #define quiz creator program
 def quiz_creator():
     #create a file path or directory for the txt file
-    filename = "quiz_questions.txt"
+    filename = input("Enter file name for your quiz questions (ex. math_quiz): ")
+    file_path = fr"D:\OneDrive\Documents\Kelvin\quiz_questions\{filename}.txt"
     #overwrite content in file and assign the file object as file
-    with open(filename, "w") as file:
+    with open(file_path, "w") as file:
         #loop the program until user wants to exit
         while True:
             #ask the user for quiz questions
