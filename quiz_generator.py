@@ -24,3 +24,10 @@ def quiz_creator():
                 else:
                     print("Invalid input. Enter a, b, c, or d only.")
             #save all the data to the txt file
+            file.write(questions "\n")
+            file.write("a." + choice_a + "\n")
+            file.write("b." + choice_b + "\n")
+            file.write("c." + choice_c + "\n")
+            file.write("d." + choice_d + "\n")
+            file.write("Answer:" + correct_answer + "\n")
+            file.write("\n")
