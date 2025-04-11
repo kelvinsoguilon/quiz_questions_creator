@@ -1,5 +1,7 @@
 #define quiz creator program
-#create a file path or directory for the txt file
+def quiz_creator():
+    #create a file path or directory for the txt file
+    filename = "quiz_questions.txt"
 #loop the program until user wants to exit
 #ask the user for quiz questions
 #ask for the choices
