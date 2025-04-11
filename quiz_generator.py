@@ -3,12 +3,14 @@ def quiz_creator():
     #create a file path or directory for the txt file
     filename = input("Enter file name for your quiz questions (ex. math_quiz): ")
     file_path = fr"D:\OneDrive\Documents\Kelvin\quiz_questions\{filename}.txt"
+    #count variable to keep track of questions
+    count = 1
     #overwrite content in file and assign the file object as file
     with open(file_path, "w") as file:
         #loop the program until user wants to exit
         while True:
             #ask the user for quiz questions
-            questions = input("Enter the quiz question (Press 'e' to exit): ")
+            questions = input(f"Enter the quiz question no.{count} (Press 'e' to exit): ")
             if questions.lower() == 'e':
                 print("Exiting the program.")
                 break
@@ -33,5 +35,6 @@ def quiz_creator():
             file.write("Answer:" + correct_answer + "\n")
             file.write("\n")
 
+            count += 1
 if __name__ == "__main__":
     quiz_creator()
