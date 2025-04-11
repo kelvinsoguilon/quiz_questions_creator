@@ -5,6 +5,8 @@ def quiz_creator():
     file_path = fr"D:\OneDrive\Documents\Kelvin\quiz_questions\{filename}.txt"
     #count variable to keep track of questions
     count = 1
+    #variable to store correct answer
+    answer_key = []
     #overwrite content in file and assign the file object as file
     with open(file_path, "w") as file:
         #loop the program until user wants to exit
@@ -32,9 +34,15 @@ def quiz_creator():
             file.write("b." + choice_b + "\n")
             file.write("c." + choice_c + "\n")
             file.write("d." + choice_d + "\n")
-            file.write("Answer:" + correct_answer + "\n")
             file.write("\n")
 
+            answer_key.append(f"{count}. {correct_answer}")
             count += 1
+
+        if answer_key:
+            file.write("Answer key:" + "\n")
+            for answer in answer_key:
+                file.write(answer + "\n")
+                
 if __name__ == "__main__":
     quiz_creator()
