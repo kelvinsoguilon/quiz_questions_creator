@@ -6,11 +6,11 @@ def quiz_creator():
     with open(filename, "w") as file:
         #loop the program until user wants to exit
         while True:
+            #ask the user for quiz questions
             questions = input("Enter the quiz question (Press 'e' to exit): ")
             if questions.lower() == 'e':
                 print("Exiting the program.")
                 break
-#ask the user for quiz questions
-#ask for the choices
-#ask for the correct answer
-#save all the data to the txt file
+            #ask for the choices
+            #ask for the correct answer
+            #save all the data to the txt file
