@@ -12,15 +12,15 @@ def quiz_creator():
         #loop the program until user wants to exit
         while True:
             #ask the user for quiz questions
-            questions = input(f"Enter the quiz question no.{count} (Press 'e' to exit): ")
+            questions = input(f"Enter the quiz question no.{count} (Press 'e' to exit): ").capitalize().strip()
             if questions.lower() == 'e':
                 print("Exiting the program.")
                 break
             #ask for the choices
-            choice_a = input("Enter choice a: ")
-            choice_b = input("Enter choice b: ")
-            choice_c = input("Enter choice c: ")
-            choice_d = input("Enter choice d: ")
+            choice_a = input("Enter choice a: ").capitalize().strip()
+            choice_b = input("Enter choice b: ").capitalize().strip()
+            choice_c = input("Enter choice c: ").capitalize().strip()
+            choice_d = input("Enter choice d: ").capitalize().strip()
             #ask for the correct answer
             while True:
                 correct_answer = input("Enter the correct answer (a, b, c, or d): ").lower()
@@ -30,10 +30,10 @@ def quiz_creator():
                     print("Invalid input. Enter a, b, c, or d only.")
             #save all the data to the txt file
             file.write(questions + "\n")
-            file.write("a." + choice_a + "\n")
-            file.write("b." + choice_b + "\n")
-            file.write("c." + choice_c + "\n")
-            file.write("d." + choice_d + "\n")
+            file.write("a. " + choice_a + "\n")
+            file.write("b. " + choice_b + "\n")
+            file.write("c. " + choice_c + "\n")
+            file.write("d. " + choice_d + "\n")
             file.write("\n")
 
             answer_key.append(f"{count}. {correct_answer}")
@@ -43,6 +43,6 @@ def quiz_creator():
             file.write("Answer key:" + "\n")
             for answer in answer_key:
                 file.write(answer + "\n")
-                
+
 if __name__ == "__main__":
     quiz_creator()
