@@ -31,3 +31,6 @@ def quiz_creator():
             file.write("d." + choice_d + "\n")
             file.write("Answer:" + correct_answer + "\n")
             file.write("\n")
+
+if __name__ == "__main__":
+    quiz_creator()
