@@ -6,8 +6,22 @@ def load_questions_with_answers(filepath):
     #store the questions and answers
     questions = []
     answers = {}
+    
     #determine how the questions and answers are stored in the txt file
-#parse the questions
-#parse the answers
+    i = 0
+    #parse the questions and options
+    while i < len(lines):
+        line = lines[i].strip()
+        if line.lower().startswith("answer key:"):
+            break
+        if line:
+            q_text = line.split('.', 1)[1].strip() if '.' in line else line
+            opts = [lines[i + j].strip() for j in range(1, 5)]
+            questions.append({'index': questions_index, 'question': q_text, 'options': opts})
+            questions_index += 1
+            i += 5 #lines in a block of question
+        else:
+            i += 1 #if there is empty space
+    #parse the answers
 #randomly select the questions
 #score counter
