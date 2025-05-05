@@ -9,6 +9,7 @@ def load_questions_with_answers(filepath):
     
     #determine how the questions and answers are stored in the txt file
     i = 0
+    questions_index = 1
     #parse the questions and options
     while i < len(lines):
         line = lines[i].strip()
