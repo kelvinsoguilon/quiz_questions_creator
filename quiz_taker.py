@@ -33,5 +33,7 @@ def load_questions_with_answers(filepath):
             ans = parts[1].strip().upper()
             answers[number] = ans
         i += 1
+
+    return questions, answers
 #randomly select the questions
 #score counter
