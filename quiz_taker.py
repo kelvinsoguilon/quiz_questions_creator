@@ -73,3 +73,8 @@ if __name__ == "__main__":
     filename = input("Type file name to take quiz (without txt): ")
     filepath = fr"D:\OneDrive\Documents\Kelvin\quiz_questions\{filename}.txt"
 
+    if not os.path.exists(filepath):
+        print("File not found. Exiting the program.")
+        exit()
+
+    questions, answers = load_questions_with_answers(filepath)
