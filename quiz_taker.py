@@ -39,5 +39,11 @@ def load_questions_with_answers(filepath):
     return questions, answers
     
     #randomly select the questions
+def run_quiz(questions, answers, num_questions=5):
+    selected_questions = random.sample(questions,min(num_questions,len(questions)))
     
+    for idx, q in enumerate(selected_questions, 1):
+        print(f"\nQuestion {idx}: {q['question']}")
+        for opt in q['options']:
+            print(opt)
 #score counter
