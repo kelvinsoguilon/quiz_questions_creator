@@ -41,9 +41,17 @@ def load_questions_with_answers(filepath):
     #randomly select the questions
 def run_quiz(questions, answers, num_questions=5):
     selected_questions = random.sample(questions,min(num_questions,len(questions)))
-    
+    score = 0
+
     for idx, q in enumerate(selected_questions, 1):
         print(f"\nQuestion {idx}: {q['question']}")
         for opt in q['options']:
             print(opt)
-#score counter
+        
+        #score counter
+        while True:
+            user_answer = input("Your answer (A/B/C/D): ").strip().upper()
+            if user_answer in ['A','B','C','D']:
+                break
+            else:
+                print("Invalid input. Select A/B/C/D only.")
