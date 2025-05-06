@@ -1,3 +1,5 @@
+import random
+
 #select file to load and read it
 def load_questions_with_answers(filepath):
     with open(filepath, 'r') as file:
@@ -35,5 +37,7 @@ def load_questions_with_answers(filepath):
         i += 1
 
     return questions, answers
-#randomly select the questions
+    
+    #randomly select the questions
+    
 #score counter
