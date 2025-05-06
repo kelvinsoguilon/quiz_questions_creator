@@ -23,6 +23,15 @@ def load_questions_with_answers(filepath):
             i += 5 #lines in a block of question
         else:
             i += 1 #if there is empty space
+    
     #parse the answers
+    while i < len(lines):
+        line = lines[i].strip()
+        if line and line[0].isdigit() and '.' in line:
+            parts = line.split('.')
+            number = int(parts[0])
+            ans = parts[1].strip().upper()
+            answers[number] = ans
+        i += 1
 #randomly select the questions
 #score counter
