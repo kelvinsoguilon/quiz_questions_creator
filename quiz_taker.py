@@ -66,3 +66,8 @@ def run_quiz(questions, answers, num_questions=5):
             print(f"❌ Incorrect. Correct answer: {correct_answer}")
 
     print(f"\nTotal Score: {score}/{len(selected_questions)}")
+    
+    #ask which txt file to read
+    if __name__ == "__main__":
+        filename = input("Type file name to take quiz (without txt): ")
+        filepath = fr"D:\OneDrive\Documents\Kelvin\quiz_questions\{filename}.txt"
