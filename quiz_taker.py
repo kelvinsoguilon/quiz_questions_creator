@@ -68,13 +68,21 @@ def run_quiz(questions, answers, num_questions=5):
 
     print(f"\nTotal Score: {score}/{len(selected_questions)}")
     
-    #ask which txt file to read
 if __name__ == "__main__":
+    #ask which txt file to read
     filename = input("Type file name to take quiz (without txt): ")
     filepath = fr"D:\OneDrive\Documents\Kelvin\quiz_questions\{filename}.txt"
-
+    #error handling
     if not os.path.exists(filepath):
         print("File not found. Exiting the program.")
         exit()
-
+    #compares the parsed question and answer to the question and answer in the file
     questions, answers = load_questions_with_answers(filepath)
+
+    try:
+        num_questions = int(input(f"How many questions do you want? (Max: {len(questions)}"))
+    except ValueError:
+        print("Invalid number. Defaulting to 5 questions.")
+        num_questions = 5
+
+    run_quiz(questions, answers, num_questions)
