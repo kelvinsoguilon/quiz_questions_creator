@@ -1,4 +1,5 @@
 import random
+import os
 
 #select file to load and read it
 def load_questions_with_answers(filepath):
@@ -68,6 +69,7 @@ def run_quiz(questions, answers, num_questions=5):
     print(f"\nTotal Score: {score}/{len(selected_questions)}")
     
     #ask which txt file to read
-    if __name__ == "__main__":
-        filename = input("Type file name to take quiz (without txt): ")
-        filepath = fr"D:\OneDrive\Documents\Kelvin\quiz_questions\{filename}.txt"
+if __name__ == "__main__":
+    filename = input("Type file name to take quiz (without txt): ")
+    filepath = fr"D:\OneDrive\Documents\Kelvin\quiz_questions\{filename}.txt"
+
