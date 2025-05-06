@@ -62,3 +62,7 @@ def run_quiz(questions, answers, num_questions=5):
         if user_answer == correct_answer:
             print("✅ Correct!")
             score += 1
+        else:
+            print(f"❌ Incorrect. Correct answer: {correct_answer}")
+
+    print(f"\nTotal Score: {score}/{len(selected_questions)}")
