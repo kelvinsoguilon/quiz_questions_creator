@@ -55,3 +55,10 @@ def run_quiz(questions, answers, num_questions=5):
                 break
             else:
                 print("Invalid input. Select A/B/C/D only.")
+        
+        #identifies correct answer from file
+        correct_answer = answers.get(q['index'])
+        #compare user answer to correct answer
+        if user_answer == correct_answer:
+            print("✅ Correct!")
+            score += 1
