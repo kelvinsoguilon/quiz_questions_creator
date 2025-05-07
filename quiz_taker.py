@@ -80,7 +80,7 @@ if __name__ == "__main__":
     questions, answers = load_questions_with_answers(filepath)
 
     try:
-        num_questions = int(input(f"How many questions do you want? (Max: {len(questions)}"))
+        num_questions = int(input(f"How many questions do you want (Max: {len(questions)})? "))
     except ValueError:
         print("Invalid number. Defaulting to 5 questions.")
         num_questions = 5
