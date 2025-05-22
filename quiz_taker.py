@@ -11,31 +11,31 @@ def load_questions_with_answers(filepath):
     answers = {}
     
     #determine how the questions and answers are stored in the txt file
-    i = 0
+    num_line = 0
     questions_index = 1
     #parse the questions and options
-    while i < len(lines):
-        line = lines[i].strip()
+    while num_line < len(lines):
+        line = lines[num_line].strip()
         if line.lower().startswith("answer key:"):
             break
         if line:
             q_text = line.split('.', 1)[1].strip() if '.' in line else line
-            opts = [lines[i + j].strip() for j in range(1, 5)]
+            opts = [lines[num_line + j].strip() for j in range(1, 5)]
             questions.append({'index': questions_index, 'question': q_text, 'options': opts})
             questions_index += 1
-            i += 5 #lines in a block of question
+            num_line += 5 #lines in a block of question
         else:
-            i += 1 #if there is empty space
+            num_line += 1 #if there is empty space
     
     #parse the answers
-    while i < len(lines):
-        line = lines[i].strip()
+    while num_line < len(lines):
+        line = lines[num_line].strip()
         if line and line[0].isdigit() and '.' in line:
             parts = line.split('.')
             number = int(parts[0])
             ans = parts[1].strip().upper()
             answers[number] = ans
-        i += 1
+        num_line += 1
 
     return questions, answers
     
